@@ -5,12 +5,18 @@ import X from '../components/icons/x';
 import Linkedin from  '../components/icons/linkedin'
 import Avaliable from '../components/icons/available'
 import Dowload from '../components/icons/dowload';
+import example1 from '../../public/example1.jpg'
+import example2 from '../../public/example2.jpg'
+import example3 from '../../public/example3.jpg'
+import example4 from '../../public/example4.jpg'
+
+
 ---
 
 <Layout title="Rico.ps">
-	<main class="xl:p-0 ld:p-0 md:p-0 p-[20px]">
-		<header>
-			<h1 class="text-[40px] font-medium mb-[10px]"> 
+	<main class="xl:p-0 ld:p-0 md:p-0 p-[20px] flex flex-col items-center">
+		<header class="text-center">
+			<h1 class="text-[40px] font-medium mb-[10px] mt-[30px]"> 
 			 hey, soy Santiago Rico
 			</h1>
 			<h2 class="mb-[10px]">
@@ -20,7 +26,7 @@ import Dowload from '../components/icons/dowload';
 			<!-- <p class="xl:w-[450px] lg:w-[450px] md:w-[450px] w-[300px]   rounded shadow-md mb-[10px]">
 				De Cesar, Colombia. Apasionado por la mejora continua y comprometido con el crecimiento. Listo para nuevos desafíos en entornos dinámicos.
 			  </p> -->
-			  <div class="flex gap-[20px] items-center mb-[10px]">
+			  <div class="flex justify-center gap-[20px] items-center mb-[10px] ">
 			<GitHub/>
 			<X/>	
 			<Linkedin/>
@@ -28,7 +34,7 @@ import Dowload from '../components/icons/dowload';
 		</div>
 		
 			</header>
-			<section class="flex gap-[20px] items-center mt-[15px]">
+			<section class="flex justify-center gap-[20px] items-center mt-[15px]">
 				<p>
 					Trabajo independiente
 				</p>
@@ -38,25 +44,55 @@ import Dowload from '../components/icons/dowload';
 				</p>
 				
 			</section>
-			<div class="flex xl:gap-[30px] lg:gap-[30px] md:gap-[30px] gap-[20px] items-center mt-[30px]">
+			<div class="flex xl:gap-[30px] lg:gap-[30px] md:gap-[30px] gap-[20px] items-center justify-center mt-[30px]">
 				<button class="bg-[#FFE071] text-[#3D3D3D] xl:w-[160px] xl:h-[50px] lg:w-[160px] lg:h-[50px] md:w-[160px] md:h-[50px] w-[140px] h-[40px] rounded-[10px] font-medium flex justify-center items-center gap-[7px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[#FFD84A]">
 					Descargar CV
 					<Dowload/>
 				</button>
 			
-				<button class="bg-[#3D3D3D] text-[#A3ABB2] xl:w-[160px] xl:h-[50px] lg:w-[160px] lg:h-[50px] md:w-[160px] md:h-[50px] w-[140px] h-[40px] rounded-[10px] font-medium flex justify-center items-center gap-[7px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[#2D2D2D]">
-					Contáctame
+				<button class="bg-[#3D3D3D] text-[#A3ABB2] xl:w-[160px] xl:h-[50px] lg:w-[160px] lg:h-[50px] md:w-[160px] md:h-[50px] w-[140px] h-[40px] rounded-[10px] font-medium flex justify-center items-center gap-[7px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[#2D2D2D]" >
+					<a href="mailto:santiagoricopassop@gmail.com">
+						Contáctame
+					</a>
+					
 				</button>
 			</div>
-			
-			<div class="flex justify-center items-center p-[10px] bg-[#171F26] rounded-[20px] mt-[40px] ">
+			<div class="flex justify-center items-center">
+			<div class="flex justify-center items-center p-[10px] bg-[#171F26] rounded-[20px] mt-[40px] xl:w-[330px] lg:w-[330px] md:w-[330px] w-[300px]">
 				<button class="xl:w-[150px] lg:w-[150px] md:w-[150px] w-[130px]  xl:h-[40px] lg:h-[40px]  md:h-[40px] h-[40px] bg-transparent proyectosButton rounded-[10px]">Proyectos</button>
 				<button class="w-[150px] h-[40px] bg-transparent habilidadesButton  rounded-[10px]">Habilidades</button>
 			</div> 
+		</div>
+		<section class="card mt-5 grid grid-cols-2 gap-4">
+			<article class="rounded-[10px] overflow-hidden ">
+				<figure class="transform transition-transform hover:scale-110 cursor-pointer">
+			  <img src={example1.src} alt="example1" class="w-full h-full object-cover" />
+			</figure>
+			</article>
+			<article class="rounded-[10px] overflow-hidden ">
+				<figure class="transform transition-transform hover:scale-110 cursor-pointer">
+			  <img src={example2.src} alt="example2" class="w-full h-full object-cover" />
+			</figure>
+			</article>
+			<article class="rounded-[10px] overflow-hidden ">
+				<figure class="transform transition-transform hover:scale-110 cursor-pointer">
+			  <img src={example3.src} alt="example3" class="w-full h-full object-cover" />
+			</figure>
+			</article>
+			<article class="rounded-[10px] overflow-hidden ">
+				<figure class="transform transition-transform hover:scale-110 cursor-pointer">
+			  <img src={example4.src} alt="example4" class="w-full h-full object-cover" />
+			</figure>
+			</article>
 			
+		  </section>
 		
 	</main>
-	
+	<footer class="p-[20px] mt-[50px]">
+		<p>
+			Santiago Rico
+		</p>
+	</footer>
 </Layout>
 
 <style>
@@ -69,6 +105,19 @@ import Dowload from '../components/icons/dowload';
     .bg-active {
         background-color: #0C151D;
     }
+	.card {
+		display: grid;
+  grid-template-columns: repeat(2, 300px);
+  grid-gap: 35px; 
+  justify-content: center;
+    }
+	@media (max-width: 767px) {
+      .card {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+        justify-content: center; /* Centrar elementos en la columna */
+      }
+    }
+	
 </style>
 <script>
  const proyectosButton: HTMLButtonElement | null = document.querySelector('.proyectosButton') as HTMLButtonElement;
