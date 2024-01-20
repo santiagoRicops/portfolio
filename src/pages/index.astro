@@ -4,6 +4,7 @@ import GitHub from '../components/icons/gitHub';
 import X from '../components/icons/x';
 import Linkedin from  '../components/icons/linkedin'
 import Avaliable from '../components/icons/available'
+import Dowload from '../components/icons/dowload';
 ---
 
 <Layout title="Rico.ps">
@@ -16,9 +17,9 @@ import Avaliable from '../components/icons/available'
 				Desarrollador de Software
 			</h2>
 			
-			<p class="xl:w-[450px] lg:w-[450px] md:w-[450px] w-[300px]   rounded shadow-md mb-[10px]">
+			<!-- <p class="xl:w-[450px] lg:w-[450px] md:w-[450px] w-[300px]   rounded shadow-md mb-[10px]">
 				De Cesar, Colombia. Apasionado por la mejora continua y comprometido con el crecimiento. Listo para nuevos desafíos en entornos dinámicos.
-			  </p>
+			  </p> -->
 			  <div class="flex gap-[20px] items-center mb-[10px]">
 			<GitHub/>
 			<X/>	
@@ -27,7 +28,7 @@ import Avaliable from '../components/icons/available'
 		</div>
 		
 			</header>
-			<section class="flex gap-[20px] justify-center mt-[30px]">
+			<section class="flex gap-[20px] items-center mt-[15px]">
 				<p>
 					Trabajo independiente
 				</p>
@@ -36,11 +37,57 @@ import Avaliable from '../components/icons/available'
 					Disponible para trabajar
 				</p>
 				
-				
 			</section>
+			<div class="flex xl:gap-[30px] lg:gap-[30px] md:gap-[30px] gap-[20px] items-center mt-[30px]">
+				<button class="bg-[#FFE071] text-[#3D3D3D] xl:w-[160px] xl:h-[50px] lg:w-[160px] lg:h-[50px] md:w-[160px] md:h-[50px] w-[140px] h-[40px] rounded-[10px] font-medium flex justify-center items-center gap-[7px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[#FFD84A]">
+					Descargar CV
+					<Dowload/>
+				</button>
+			
+				<button class="bg-[#3D3D3D] text-[#A3ABB2] xl:w-[160px] xl:h-[50px] lg:w-[160px] lg:h-[50px] md:w-[160px] md:h-[50px] w-[140px] h-[40px] rounded-[10px] font-medium flex justify-center items-center gap-[7px] transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-[#2D2D2D]">
+					Contáctame
+				</button>
+			</div>
+			
+			<div class="flex justify-center items-center p-[10px] bg-[#171F26] rounded-[20px] mt-[40px] ">
+				<button class="xl:w-[150px] lg:w-[150px] md:w-[150px] w-[130px]  xl:h-[40px] lg:h-[40px]  md:h-[40px] h-[40px] bg-transparent proyectosButton rounded-[10px]">Proyectos</button>
+				<button class="w-[150px] h-[40px] bg-transparent habilidadesButton  rounded-[10px]">Habilidades</button>
+			</div> 
+			
+		
 	</main>
 	
 </Layout>
 
 <style>
+	
+    .proyectosButton,
+    .habilidadesButton {
+        transition: background-color 150ms ease-in-out;
+    }
+
+    .bg-active {
+        background-color: #0C151D;
+    }
 </style>
+<script>
+ const proyectosButton: HTMLButtonElement | null = document.querySelector('.proyectosButton') as HTMLButtonElement;
+    const habilidadesButton: HTMLButtonElement | null = document.querySelector('.habilidadesButton') as HTMLButtonElement;
+
+    function removeBackgroundClass(button: HTMLButtonElement | null): void {
+        if (button) {
+            const otherButton = button === proyectosButton ? habilidadesButton : proyectosButton;
+            otherButton?.classList.remove('bg-active');
+        }
+    }
+
+    proyectosButton?.addEventListener('click', () => {
+        removeBackgroundClass(proyectosButton);
+        proyectosButton?.classList.add('bg-active');
+    });
+
+    habilidadesButton?.addEventListener('click', () => {
+        removeBackgroundClass(habilidadesButton);
+        habilidadesButton?.classList.add('bg-active');
+    });
+</script>
