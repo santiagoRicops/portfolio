@@ -3,8 +3,8 @@ const Dowload = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="icon icon-tabler icon-tabler-download transition-transform transform hover:scale-105"
-      width="19"
-      height="19"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"

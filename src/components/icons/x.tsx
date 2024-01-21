@@ -3,8 +3,8 @@ const X = () => {
     <svg
       className="cursor-pointer transition-transform transform hover:scale-105"
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="24"
+      height="24"
       fill="none"
       viewBox="0 0 1200 1227"
     >
