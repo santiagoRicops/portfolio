@@ -5,13 +5,10 @@ import X from '../components/icons/x';
 import Linkedin from  '../components/icons/linkedin'
 import Avaliable from '../components/icons/available'
 import Dowload from '../components/icons/dowload';
-import example1 from '../../public/example1.jpg'
-import example2 from '../../public/example2.jpg'
-import example3 from '../../public/example3.jpg'
-import example4 from '../../public/example4.jpg'
+
 import { Location } from '../components/icons/location';
 
-import Card from '../components/card';
+import Card from '../components/card.jsx';
 ---
 
 <Layout title="Rico.ps">
@@ -24,7 +21,7 @@ import Card from '../components/card';
 				Desarrollador de Software
 			</h2>
 			
-		 <p class="xl:w-[450px] lg:w-[450px] md:w-[450px] w-[300px]   rounded shadow-md mb-[10px]">
+		 <p class="xl:w-[450px] lg:w-[450px] md:w-[450px]    rounded  mb-[10px]">
 			De Colombia,  Cesar. Programador orientado a la constante innovación, explorando ideas más allá de lo habitual.
 			  </p> 
 			  <div class="flex justify-center gap-[20px] items-center mb-[10px] ">
@@ -88,7 +85,7 @@ import Card from '../components/card';
 			  <img src={example4.src} alt="example4" class="w-full h-full object-cover" />
 			</figure>
 			</article> -->
-			<Card/>
+			<Card client:only/>
 
 		
 	</main>
