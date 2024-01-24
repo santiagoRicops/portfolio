@@ -7,8 +7,10 @@ import { Next } from './icons/next'
 import Tailwind from './icons/tailwind'
 import Firebase from './icons/firebases'
 import Preact from './icons/preact'
-import  Carousel  from './ui/carusel'
-import useEmblaCarousel from 'embla-carousel-react'
+import Carousel from './ui/carusel'
+
+import Button from './ui/butons'
+import GitHub from './icons/gitHub'
 
 const Card = () => {
   const TAGS = {
@@ -41,6 +43,7 @@ const Card = () => {
       title: 'Wartix E-comerce Personal',
       description: 'Creado desde cero con Next.js,Firebase y Tailwind CSS.',
       tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.FIREBASE],
+      href: 'https://github.com/santiagoRicops/wartrix',
     },
     {
       src: example2.src,
@@ -55,43 +58,49 @@ const Card = () => {
       alt: 'example4',
     },
   ]
- 
+
   return (
-    <section className=" w-full flex flex-col justify-center  gap-[50px]">
-      {imagesProyect.map(({ src, title, description, tags, alt }, i) => (
-        <article>
+    <>
+      {imagesProyect.map(({ src, title, description, tags, alt, href }, i) => (
+        <article className="relative ">
           <header>
-            <h2>{title}</h2>
+            <h2 className="text-[20px] font-medium text-[#FFE071]">{title}</h2>
             <p className="xl:w-[800px] lg:w-[700px] md:w-[600px] w-[300px]">
               {description}
             </p>
             <ul className="flex items-center overflow-hidden xl:w-[800px] lg:w-[700px] md:w-[600px] w-[300px] ">
               <Carousel>
-              {tags &&
-                tags.map((tag, j) => (
-                  <li
-                    key={j}
-                    className="shrink-0 snap-start mt-[10px] mb-[10px]"
-                  >
-                    <TagsIcons className={tag.className}>
-                      {<tag.icon />}
-                      {tag.name}
-                    </TagsIcons>
-                  </li>
-                ))}
-                </Carousel>
+                {tags &&
+                  tags.map((tag, j) => (
+                    <li
+                      key={j}
+                      className="shrink-0 snap-start mt-[10px] mb-[10px]"
+                    >
+                      <TagsIcons className={tag.className}>
+                        {<tag.icon />}
+                        {tag.name}
+                      </TagsIcons>
+                    </li>
+                  ))}
+              </Carousel>
             </ul>
           </header>
           <figure key={i} className="cursor-pointer">
             <img
-              className="xl:w-[800px] lg:w-[700px] md:w-[600px] w-[300px]  xl:h-[450px] lg:h-[450px] md:h-[350px] h-[250px]  rounded-[5px]"
+              className="xl:w-[800px] lg:w-[700px] md:w-[600px] w-[300px] xl:h-[450px] lg:h-[450px] md:h-[350px] h-[250px] rounded-[5px]"
               src={src}
               alt={alt}
             />
           </figure>
+          <Button>
+            <a href={href}>
+              <GitHub />
+              Ver código fuente
+            </a>
+          </Button>
         </article>
       ))}
-    </section>
+    </>
   )
 }
 export default Card

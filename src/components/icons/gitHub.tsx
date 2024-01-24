@@ -1,6 +1,9 @@
-const GitHub = () => {
+interface PropsGitHub {
+  href?: string
+}
+const GitHub = ({ href }: PropsGitHub) => {
   return (
-    <a href="https://github.com/santiagoRicops">
+    <a href={href}>
       <svg
         href="github.com/santiagoRicops"
         xmlns="http://www.w3.org/2000/svg"
